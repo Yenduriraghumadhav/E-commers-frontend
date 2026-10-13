@@ -1,0 +1,745 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.profile-page {
+  min-height: 100vh;
+  padding: 45px 0 80px;
+  background: #f7f7f9;
+  color: #191a20;
+  font-family: "DM Sans", sans-serif;
+}
+
+.profile-container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+/* =========================
+   Header
+========================= */
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.page-label,
+.sidebar-label,
+.card-title > div > span {
+  display: block;
+  color: #999aa3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.page-header h1 {
+  margin: 5px 0 5px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 31px;
+  letter-spacing: -1px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #888a94;
+  font-size: 13px;
+}
+
+/* =========================
+   Profile Overview
+========================= */
+
+.profile-overview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 28px;
+  border: 1px solid #e9e9ed;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(25, 26, 32, .035);
+  margin-bottom: 22px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-avatar {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22232b, #62636b);
+  color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.name-row h2 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+}
+
+.verified-badge {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #17181d;
+  color: #fff;
+  font-size: 10px;
+}
+
+.user-info > p {
+  margin: 5px 0;
+  color: #7e8089;
+  font-size: 12px;
+}
+
+.member-since {
+  color: #aaaab1;
+  font-size: 10px;
+}
+
+.account-stats {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.account-stat {
+  text-align: center;
+}
+
+.account-stat strong {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+}
+
+.account-stat span {
+  color: #999aa3;
+  font-size: 10px;
+}
+
+/* =========================
+   Grid
+========================= */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+}
+
+.profile-main,
+.profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.profile-card,
+.sidebar-card {
+  padding: 25px;
+  border: 1px solid #e9e9ed;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 7px 28px rgba(25, 26, 32, .03);
+}
+
+.card-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card-title h3,
+.sidebar-card-header h3 {
+  margin: 4px 0 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: -.3px;
+}
+
+.card-edit,
+.view-all,
+.add-btn {
+  border: 0;
+  background: transparent;
+  color: #5d5e67;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.view-all,
+.add-btn {
+  color: #55565f;
+}
+
+/* =========================
+   Details
+========================= */
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 35px;
+}
+
+.detail label {
+  display: block;
+  margin-bottom: 6px;
+  color: #aaaab2;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.detail p {
+  margin: 0;
+  color: #383941;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   Orders
+========================= */
+
+.orders {
+  display: flex;
+  flex-direction: column;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-top: 1px solid #eeeeF1;
+}
+
+.product-image {
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 28px;
+}
+
+.product-one {
+  background: #f0eee9;
+}
+
+.product-two {
+  background: #e9f0f4;
+}
+
+.product-three {
+  background: #f2edf8;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.order-info h4 {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.order-info p {
+  margin: 0 0 4px;
+  color: #696b75;
+  font-size: 10px;
+}
+
+.order-info span {
+  color: #aaaab2;
+  font-size: 9px;
+}
+
+.order-price {
+  text-align: right;
+}
+
+.order-price strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.order-price span {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.delivered {
+  color: #2f855a;
+  background: #eaf8f0;
+}
+
+.shipped {
+  color: #876d19;
+  background: #fff8dc;
+}
+
+/* =========================
+   Addresses
+========================= */
+
+.addresses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.address-card {
+  padding: 16px;
+  border: 1px solid #e6e6ea;
+  border-radius: 12px;
+}
+
+.active-address {
+  border-color: #bcbcc4;
+  background: #fcfcfc;
+}
+
+.address-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.address-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #f0f0f2;
+  color: #36373e;
+}
+
+.address-top > div:nth-child(2) {
+  flex: 1;
+}
+
+.address-top h4 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.address-top button {
+  border: 0;
+  background: transparent;
+  color: #999aa2;
+  cursor: pointer;
+}
+
+.default-label {
+  display: inline-block;
+  margin-top: 4px;
+  color: #777880;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.address-card > p {
+  margin: 14px 0 0;
+  color: #767780;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* =========================
+   Account Menu
+========================= */
+
+.sidebar-label {
+  margin-bottom: 15px;
+}
+
+.account-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #55565e;
+  font-family: inherit;
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+  transition: .18s;
+}
+
+.menu-item:hover {
+  background: #f7f7f8;
+}
+
+.menu-item.active {
+  background: #f1f1f2;
+  color: #17181d;
+  font-weight: 700;
+}
+
+.menu-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #f1f1f3;
+  color: #6d6e77;
+}
+
+.menu-item.active .menu-icon {
+  background: #fff;
+  color: #222329;
+}
+
+.menu-item small {
+  margin-left: auto;
+  min-width: 18px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  background: #ededf0;
+  text-align: center;
+  font-size: 9px;
+}
+
+.menu-item b {
+  margin-left: auto;
+  color: #a4a5ad;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* =========================
+   Loyalty
+========================= */
+
+.loyalty-card {
+  padding: 23px;
+  border-radius: 17px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255,255,255,.18), transparent 30%),
+    linear-gradient(140deg, #202126, #383941);
+  box-shadow: 0 12px 35px rgba(25, 26, 32, .15);
+}
+
+.loyalty-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.loyalty-top span {
+  color: #a9aab0;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.loyalty-top h3 {
+  margin: 5px 0 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+}
+
+.crown {
+  font-size: 23px;
+  color: #d7b66d;
+}
+
+.points {
+  margin: 27px 0 14px;
+}
+
+.points strong {
+  display: block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 27px;
+}
+
+.points span {
+  color: #aaaab0;
+  font-size: 9px;
+}
+
+.points-progress {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255,255,255,.12);
+}
+
+.points-progress div {
+  width: 78%;
+  height: 100%;
+  border-radius: inherit;
+  background: #d5b467;
+}
+
+.loyalty-card p {
+  margin: 10px 0 18px;
+  color: #aaaab0;
+  font-size: 9px;
+}
+
+.loyalty-card button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================
+   Payment
+========================= */
+
+.sidebar-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.sidebar-card-header button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e3e3e7;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.bank-card {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+  padding: 19px;
+  border-radius: 15px;
+  color: white;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(255,255,255,.16), transparent 35%),
+    linear-gradient(135deg, #22232a, #474850);
+}
+
+.card-chip {
+  width: 29px;
+  height: 21px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #c8c8c8, #777);
+}
+
+.card-brand {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  font-size: 12px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.card-number {
+  margin-top: 29px;
+  font-family: monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.card-bottom {
+  position: absolute;
+  right: 19px;
+  bottom: 17px;
+  left: 19px;
+  display: flex;
+  justify-content: space-between;
+  color: #c5c5c9;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+/* =========================
+   Logout
+========================= */
+
+.logout-btn {
+  height: 47px;
+  width: 120px;
+  border: 1px solid #eadcdc;
+  border-radius: 12px;
+  background: #fff;
+  color: #b14d4d;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.logout-btn:hover {
+  background: #fff7f7;
+  border-color: #e2caca;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .loyalty-card,
+  .logout-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .profile-page {
+    padding: 25px 0 50px;
+  }
+
+  .profile-container {
+    width: calc(100% - 24px);
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .page-header h1 {
+    font-size: 27px;
+  }
+
+
+  .profile-overview {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .account-stats {
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 18px;
+    border-top: 1px solid #ededf0;
+  }
+
+  .profile-sidebar {
+    display: flex;
+  }
+
+  .loyalty-card,
+  .logout-btn {
+    grid-column: auto;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .addresses {
+    grid-template-columns: 1fr;
+  }
+
+  .order {
+    align-items: flex-start;
+  }
+
+  .order-price {
+    margin-left: auto;
+  }
+
+  .product-image {
+    width: 55px;
+    height: 55px;
+    flex-basis: 55px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 430px) {
+  .profile-card,
+  .sidebar-card,
+  .loyalty-card {
+    padding: 19px;
+  }
+
+  .user-avatar {
+    width: 62px;
+    height: 62px;
+  }
+
+  .account-stats {
+    gap: 10px;
+  }
+
+  .order-price span {
+    display: none;
+  }
+
+  .order-info h4 {
+    font-size: 11px;
+  }
+}

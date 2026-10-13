@@ -1,0 +1,427 @@
+.vendor-excel-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 45px 20px;
+    box-sizing: border-box;
+}
+
+.vendor-excel-container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.excel-page-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.header-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: #e9f8ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+}
+
+.excel-page-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #172033;
+    font-weight: 700;
+}
+
+.excel-page-header p {
+    margin: 7px 0 0;
+    color: #70798b;
+    font-size: 15px;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.excel-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 8px 35px rgba(28, 42, 70, 0.08);
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.excel-step {
+    display: flex;
+    gap: 22px;
+}
+
+.step-number {
+    min-width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #1f8f55;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: #202939;
+}
+
+.step-content > p {
+    margin: 0 0 20px;
+    color: #737c8d;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.step-divider {
+    height: 1px;
+    background: #edf0f4;
+    margin: 32px 0;
+}
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.download-template-btn {
+    border: none;
+    background: #1f8f55;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.download-template-btn:hover {
+    background: #177342;
+    transform: translateY(-1px);
+}
+
+.download-template-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.instruction-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 17px;
+    background: #fff9e8;
+    border: 1px solid #f5e4a8;
+    border-radius: 10px;
+}
+
+.instruction-icon {
+    font-size: 21px;
+}
+
+.instruction-box strong {
+    color: #665116;
+    font-size: 14px;
+}
+
+.instruction-box p {
+    margin: 5px 0 0;
+    color: #75652b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   DROP AREA
+========================= */
+
+.excel-drop-area {
+    border: 2px dashed #ccd4df;
+    border-radius: 14px;
+    min-height: 235px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    background: #fafbfd;
+}
+
+.excel-drop-area:hover,
+.excel-drop-area.dragging {
+    border-color: #1f8f55;
+    background: #f3fbf6;
+}
+
+.excel-drop-area.file-selected {
+    cursor: default;
+    border-style: solid;
+    border-color: #b8dec7;
+    background: #f7fcf9;
+}
+
+.upload-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.excel-drop-area h3 {
+    margin: 4px 0;
+    color: #273142;
+    font-size: 17px;
+}
+
+.excel-drop-area > p {
+    margin: 5px 0;
+    color: #929aaa;
+}
+
+.choose-file-btn {
+    border: 1px solid #1f8f55;
+    background: white;
+    color: #1f8f55;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 7px 0 13px;
+}
+
+.choose-file-btn:hover {
+    background: #1f8f55;
+    color: white;
+}
+
+.supported-files {
+    color: #929aaa;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================
+   SELECTED FILE
+========================= */
+
+.selected-file {
+    width: 100%;
+    max-width: 570px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.excel-file-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: #e6f6ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-details h3 {
+    margin: 0 0 5px;
+    color: #263143;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+.file-details p {
+    margin: 0;
+    color: #8a93a3;
+    font-size: 13px;
+}
+
+.remove-file-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #fff0f0;
+    color: #d9534f;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-file-btn:hover {
+    background: #d9534f;
+    color: white;
+}
+
+/* =========================
+   UPLOAD BUTTON
+========================= */
+
+.upload-excel-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #202d3d;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.upload-excel-btn:hover {
+    background: #111b27;
+}
+
+.upload-excel-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* =========================
+   SPINNER
+========================= */
+
+.spinner {
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+.success-message,
+.error-message {
+    margin-top: 25px;
+    padding: 13px 16px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.success-message {
+    background: #edf9f1;
+    border: 1px solid #c6e8d1;
+    color: #176b3d;
+}
+
+.error-message {
+    background: #fff1f1;
+    border: 1px solid #f0cccc;
+    color: #b52e2e;
+}
+
+.success-message p,
+.error-message p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.excel-footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 22px;
+    color: #7e8797;
+    font-size: 12px;
+}
+
+.excel-footer-info div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+@media (max-width: 650px) {
+
+    .vendor-excel-page {
+        padding: 25px 12px;
+    }
+
+    .excel-card {
+        padding: 22px 17px;
+    }
+
+    .excel-page-header h1 {
+        font-size: 24px;
+    }
+
+    .excel-step {
+        gap: 12px;
+    }
+
+    .step-number {
+        min-width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .step-content h2 {
+        font-size: 17px;
+    }
+
+    .excel-footer-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .selected-file {
+        gap: 10px;
+    }
+}

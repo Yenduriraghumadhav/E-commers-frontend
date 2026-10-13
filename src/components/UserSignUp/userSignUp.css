@@ -1,0 +1,313 @@
+.registration-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f6fa;
+    padding: 30px;
+}
+
+.registration-card {
+    width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.registration-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.registration-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row input {
+    width: 50%;
+}
+
+.registration-card input,
+.registration-card select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.registration-card button {
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.registration-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.success-message {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+
+/* ========================= */
+/* OTP POPUP */
+/* ========================= */
+
+.otp-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    padding: 20px;
+}
+
+.otp-popup {
+    position: relative;
+
+    width: 400px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.25);
+
+    animation: otpPopupAnimation 0.25s ease;
+}
+
+@keyframes otpPopupAnimation {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Close button */
+
+.otp-close {
+    position: absolute;
+
+    right: 15px;
+    top: 12px;
+
+    width: 35px !important;
+    height: 35px;
+
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    color: #555 !important;
+
+    font-size: 25px !important;
+
+    cursor: pointer;
+}
+
+.otp-close:hover {
+    background: #f1f1f1 !important;
+}
+
+
+/* OTP heading */
+
+.otp-popup h2 {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+}
+
+
+/* Description */
+
+.otp-description {
+    color: #666;
+
+    margin-bottom: 5px;
+}
+
+
+/* Email */
+
+.otp-email {
+    font-weight: bold;
+
+    color: #2563eb;
+
+    margin-bottom: 25px;
+
+    word-break: break-word;
+}
+
+
+/* OTP INPUT */
+
+.otp-input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 24px;
+
+    text-align: center;
+
+    letter-spacing: 8px;
+
+    outline: none;
+}
+
+.otp-input:focus {
+    border-color: #2563eb;
+}
+
+
+/* OTP ERROR */
+
+.otp-error {
+    margin-top: 12px;
+
+    padding: 10px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+
+/* OTP SUCCESS */
+
+.otp-success {
+    margin-top: 12px;
+
+    padding: 10px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+
+/* VERIFY BUTTON */
+
+.verify-button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.verify-button:hover {
+    background: #1d4ed8;
+}
+
+.verify-button:disabled {
+    background: #9ca3af;
+
+    cursor: not-allowed;
+}
+
+
+/* Footer */
+
+.otp-footer {
+    margin-top: 18px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+@media (max-width: 600px) {
+
+    .registration-card {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row input {
+        width: 100%;
+    }
+
+    .otp-popup {
+        width: 100%;
+        padding: 30px 20px;
+    }
+}
