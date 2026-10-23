@@ -13,6 +13,11 @@ const VendoreProfilePage = () => {
     vendore_pincode: "",
     seller_id: "",
   });
+  const [totalorderdetails, settotalorderdetails] = useState({
+    total_ordered_products: "",
+    total_revenue: "",
+    total_quantity: ""
+  })
   const [vendorData, setVendoreBussinessDetails] = useState({
     Business_Email: "",
     Business_Phone: "",
@@ -28,19 +33,57 @@ const VendoreProfilePage = () => {
 
   useEffect(() => {
     async function totalproducts() {
-      const checking = await axios.get(
-        "http://localhost:8000/vendorePersonalDetails",
-        {
-          params: {
-            email: Emails,
-          },
-          withCredentials: true,
+      try {
+        const checking = await axios.get(
+          "http://localhost:8000/vendorePersonalDetails",
+          {
+            params: {
+              email: Emails,
+            },
+            withCredentials: true,
+          }
+        );
+        setvendorepersonalData(checking.data.PersonalDetails);
+      } catch (error) {
+        console.log("fetching error : ", error);
+        if (error.response?.status === 401 || error.response?.status === 422) {
+          localStorage.removeItem("vendore_email");
+          localStorage.removeItem("role");
+          sendingto("/vendoreLogin");
+          return;
         }
-      );
-      setvendorepersonalData(checking.data.PersonalDetails);
+      }
     }
 
     totalproducts();
+  }, [])
+
+
+  useEffect(() => {
+    async function orderTrackingporductsandrevenvu() {
+      try {
+        const checking = await axios.get(
+          "http://localhost:8000/vendoreOrdersRevenueData",
+          {
+            params: {
+              email: Emails,
+            },
+            withCredentials: true,
+          }
+        );
+        settotalorderdetails(checking.data.vendoreDetails);
+      } catch (error) {
+        console.log("fetching error : ", error);
+        if (error.response?.status === 401 || error.response?.status === 422) {
+          localStorage.removeItem("vendore_email");
+          localStorage.removeItem("role");
+          sendingto("/vendoreLogin");
+          return;
+        }
+      }
+    }
+
+    orderTrackingporductsandrevenvu();
   }, [])
 
   useEffect(() => {
@@ -70,6 +113,8 @@ const VendoreProfilePage = () => {
       getVendoreData();
     }
   }, [Emails])
+
+
 
   return (
     <div className="vendor-profile-page">
@@ -102,18 +147,18 @@ const VendoreProfilePage = () => {
           <div className="quick-stats">
             <div className="stat-box">
               <span>Total orders</span>
-              {/* <strong>{vendorData.totalOrders}</strong> */}
+              <strong>{totalorderdetails.total_ordered_products}</strong>
             </div>
             <div className="stat-box">
               <span>Revenue</span>
-              {/* <strong>{vendorData.revenue}</strong> */}
+              <strong>{totalorderdetails.total_revenue}</strong>
             </div>
             <div className="stat-box">
-              <span>Products</span>
-              {/* <strong>{vendorData.products}</strong> */}
+              <span>Sale Quality</span>
+              <strong>{totalorderdetails.total_quantity}</strong>
             </div>
             <div className="stat-box">
-              <span>Followers</span>
+              <span>Cancel Orders</span>
               {/* <strong>{vendorData.followers}</strong> */}
             </div>
           </div>
