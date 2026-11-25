@@ -38,7 +38,7 @@ function App() {
           <Route path='/userforgotpassword' element={<ForgotpasswordsUser />} />
 
           {/* Vendor Routes */}
-          <Route element={<ProtectedRoute allowedRoles={["vendore"]} />}>
+          <Route element={<ProtectedRoute allowedRoles={["vendor"]} />}>
             <Route element={<VendoreLayout />}>
               <Route
                 path="/vendoresHomePage"
